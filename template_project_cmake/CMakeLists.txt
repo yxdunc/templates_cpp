@@ -1,7 +1,7 @@
 # Name of the project:
 project(rguignar-template)
 
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.2 FATAL_ERROR)
 
 set (CMAKE_CXX_STANDARD 11)
 
@@ -20,6 +20,7 @@ macro (add_sources)
     endif()
 endmacro()
 
+include_directories(include)
 add_subdirectory(src)
 
 message(STATUS "${SRCS}")

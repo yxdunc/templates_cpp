@@ -1,7 +1,4 @@
-#include <iostream>
-#include <math.h>
-#include <vector>
-#include <algorithm>
+#include "softmax.hpp"
 
 template <typename T>
 std::string		serialize(const std::vector<T> &vec)
@@ -17,25 +14,6 @@ std::string		serialize(const std::vector<T> &vec)
 	return (str);
 }
 
-std::vector<double>				softmax(std::vector<double> input)
-{
-	unsigned int		size = input.size();
-	double				sum = 0;
-	std::vector<double>	probabilities(size);
-
-	for (unsigned int o=0; o < size; ++o)
-	{
-		probabilities[o] = exp (input[o]);
-		sum += probabilities[o];
-	}
-
-	for (unsigned int o=0; o < size; ++o)
-	{
-		probabilities[o] /= sum;
-	}
-
-	return (probabilities);
-}
 int main()
 {
 	std::vector<double>		value;
